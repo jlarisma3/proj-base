@@ -1,0 +1,20 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ model }} as {{ base }};
+use App\Repositories\Contracts\RepoInterface;
+use App\Repositories\Contracts\Traits\RepoTrait;
+use Illuminate\Http\Request;
+
+/**
+ * Class {{ class }}
+ *
+ * @package {{ namespace }}
+ */
+class {{ class }} implements RepoInterface
+{
+    use RepoTrait;
+
+    public function all(Request $request) {}
+}
