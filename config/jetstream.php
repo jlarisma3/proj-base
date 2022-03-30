@@ -75,4 +75,14 @@ return [
 
     'profile_photo_disk' => 'public',
 
+    /*
+    |--------------------------------------------------------------------------
+    | View Root Folder
+    |--------------------------------------------------------------------------
+    |
+    | This configuration value determines root directory of view project.
+    |
+    */
+    'project_view' => env('PROJECT_VIEW', 'Project')
+
 ];
