@@ -83,6 +83,6 @@ return [
     | This configuration value determines root directory of view project.
     |
     */
-    'project_view' => env('PROJECT_VIEW', 'Project')
+    'project_view' => env('APP_PROJECT_VIEW', 'Project')
 
 ];
