@@ -20,10 +20,6 @@ return new class extends Migration
             $table->string('route_name')->nullable()->index();
             $table->string('method')->nullable();
         });
-
-        Schema::table('endpoints', function (Blueprint $table) {
-            $table->index('route_name');
-        });
     }
 
     /**
@@ -34,7 +30,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('endpoints', function (Blueprint $table) {
-            $table->dropIndex('route_name');
+            $table->dropIndex('endpoints_route_name_index');
         });
 
         Schema::dropIfExists('endpoints');

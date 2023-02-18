@@ -22,7 +22,12 @@ class RoleEndpointSeeder extends Seeder
         $roles = Role::get(); //UserType::all();
         $roles->each(function ($role) {
             $endpoints = Endpoint::get();
-            $routes = array_merge($this->roledRoutes()[$role->code], $this->genericRoutes());
+            $roleRoutes =  $this->roledRoutes();
+
+            if(! isset($roleRoutes[$role->code]))
+                return true;
+
+            $routes = array_merge($roleRoutes[$role->code], $this->genericRoutes());
 
             $endpoints->each(function ($endpoint) use($role, $routes) {
                 if($role->code == 'admin') {

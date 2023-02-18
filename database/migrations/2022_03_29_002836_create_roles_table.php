@@ -16,11 +16,7 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('code')->unique();
-        });
-
-        Schema::table('roles', function (Blueprint $table) {
-            $table->index('code');
+            $table->string('code')->unique()->index();
         });
     }
 
@@ -32,7 +28,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('roles', function (Blueprint $table) {
-            $table->dropIndex('code');
+            $table->dropIndex('roles_code_index');
         });
 
         Schema::dropIfExists('roles');
