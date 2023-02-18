@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('code')->unique()->index();
+            $table->string('code')->unique();
+        });
+
+        Schema::table('roles', function (Blueprint $table) {
+            $table->index('code');
         });
     }
 
