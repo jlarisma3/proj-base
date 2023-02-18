@@ -11,10 +11,25 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => require(`./${projectDir}/${name}.vue`),
     setup({ el, app, props, plugin }) {
-        return createApp({ render: () => h(app, props) })
+
+        const vApp =  createApp({ render: () => h(app, props) })
             .use(plugin)
             .mixin({ methods: { route } })
-            .mount(el);
+
+        vApp.config.globalProperties.userCan = (routeName) => {
+            if(routeName.length == 0)
+                return false;
+
+            let auths = usePage()
+                .props
+                .value?.access;
+
+            return auths.some(r => r.route_name == routeName);
+        };
+
+        vApp.mount(el)
+
+        return vApp;
     },
 });
 

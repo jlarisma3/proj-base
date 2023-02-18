@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Endpoint extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'route_name',
+        'uri',
+        'method',
+        'middleware'
+    ];
+
+    public $timestamps = false;
 }
