@@ -4,6 +4,7 @@ namespace App\Models\User;
 
 use App\Models\_Traits\Search\Search;
 use App\Models\User\Role\Role;
+use App\Models\User\Status\Status;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

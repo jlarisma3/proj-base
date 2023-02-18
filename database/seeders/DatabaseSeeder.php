@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User\Payment\UserPayment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -22,7 +21,7 @@ class DatabaseSeeder extends Seeder
             RoleEndpointSeeder::class,
         ]);
 
-         \App\Models\User::factory(50)->create();
+         \App\Models\User\User::factory(50)->create();
 
          //UserPayment::factory(50)->create();
     }
