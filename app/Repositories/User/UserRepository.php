@@ -16,5 +16,12 @@ class UserRepository implements RepoInterface
 {
     use RepoTrait;
 
+    public function init()
+    {
+        $this->set(new User);
+
+        return $this;
+    }
+
     public function all(Request $request) {}
 }

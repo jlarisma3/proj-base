@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 interface RepoInterface
 {
+
+    /**
+     * @return mixed
+     */
+    public function init();
+
     /**
      * @param int $id
      *

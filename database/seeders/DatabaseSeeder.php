@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User\Payment\UserPayment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            EndpointSeeder::class,
+            StatusSeeder::class,
+            RoleSeeder::class,
+            RoleEndpointSeeder::class,
+        ]);
+
+         \App\Models\User::factory(50)->create();
+
+         //UserPayment::factory(50)->create();
     }
 }
