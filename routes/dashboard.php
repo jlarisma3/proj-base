@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function (\Illuminate\Support\Facades\Request $request) {
-  var_dump('hello');
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    return \Inertia\Inertia::render('TestPage');
 })->name('dashboard');
